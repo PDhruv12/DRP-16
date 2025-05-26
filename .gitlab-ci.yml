@@ -18,7 +18,7 @@ test:
     - echo "Testing the web application."
 
 deploy:
-  stage: deploy_to_tsuru
+  stage: deploy
   script:
     - echo "Deploying the web application."
   # Runs the job only when a commit to master has been made
