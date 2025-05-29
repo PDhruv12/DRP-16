@@ -2,13 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import { Pin } from '../types'; // Assumes types folder is one level up from components
 
-interface MapViewProps {
-  pins: Pin[];
-}
-
 const { width, height } = Dimensions.get('window');
 
-const MapViewComponent: React.FC<MapViewProps> = ({ pins }) => {
+const MapViewComponent = ({ pins }) => {
   // In a real app, you'd use a map library like react-native-maps here
   // and render pins on the map.
   return (

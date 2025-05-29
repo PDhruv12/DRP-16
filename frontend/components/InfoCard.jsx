@@ -2,11 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Pin } from '../types'; // Assumes types folder is one level up from components
 
-interface InfoCardProps {
-  pin: Pin;
-}
 
-const InfoCard: React.FC<InfoCardProps> = ({ pin }) => {
+const InfoCard = ({ pin }) => {
   return (
     <View style={styles.card}>
       <Text style={styles.title}>{pin.title}</Text>

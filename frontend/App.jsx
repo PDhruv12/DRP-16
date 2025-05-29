@@ -28,13 +28,8 @@ import MapViewComponent from './components/MapView'; // Changed path
 import ListViewComponent from './components/ListView'; // Changed path
 import {mockPins} from './constants/mockData'; // Changed path
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
 
-type ViewMode = 'map' | 'list';
-
-function Section({children, title}: SectionProps): React.JSX.Element {
+function Section({children, title}){
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -60,7 +55,7 @@ function Section({children, title}: SectionProps): React.JSX.Element {
   );
 }
 
-function App(): React.JSX.Element {
+function App() {
   const isDarkMode = useColorScheme() === 'dark';
   const [viewMode, setViewMode] = useState<ViewMode>('map');
 

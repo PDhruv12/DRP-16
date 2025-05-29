@@ -3,11 +3,7 @@ import { FlatList, StyleSheet, View } from 'react-native';
 import { Pin } from '../types'; // Assumes types folder is one level up from components
 import InfoCard from './InfoCard';
 
-interface ListViewProps {
-  pins: Pin[];
-}
-
-const ListViewComponent: React.FC<ListViewProps> = ({ pins }) => {
+const ListViewComponent = ({ pins }) => {
   return (
     <View style={styles.container}>
       <FlatList
