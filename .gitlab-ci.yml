@@ -34,7 +34,7 @@ build:
 
 deploy-backend:
   image: alpine:latest
-  stage: deploy
+  stage: deploy-backend
   script:
     - apk add --no-cache curl git
     - git config --global user.email "ci@example.com"
