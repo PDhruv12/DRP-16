@@ -21,7 +21,7 @@ build:
   before_script:
   - yarn install --frozen-lockfile 
   script:
-    - cd frontend/android && ./gradlew assembleRelease
+    - cd frontend/android && ./gradlew clean && ./gradlew assembleRelease
     - yarn install --pure-lockfile --cache-folder .yarn
   only:
     - master
