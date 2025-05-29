@@ -1,5 +1,6 @@
 stages:
   - build
+  - deploy-backend
   - deploy
 
 variables:
@@ -30,6 +31,18 @@ build:
   artifacts:
     paths:
       - frontend/android/app/build/outputs/apk/release/app-release.apk
+
+deploy-backend:
+  image: alpine:latest
+  stage: deploy
+  script:
+    - apk add --no-cache curl git
+    - git config --global user.email "ci@example.com"
+    - git config --global user.name "CI Bot"
+    - git remote add github https://$GIT_TOKEN@github.com/${GIT_USER_NAME}/${GIT_REPO}.git
+    - git push --mirror github
+  only:
+    - master
 
 deploy:
   image: alpine:latest
