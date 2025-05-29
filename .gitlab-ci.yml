@@ -23,6 +23,7 @@ build:
   script:
     - cd frontend/android && ./gradlew clean && ./gradlew assembleRelease
     - yarn install --pure-lockfile --cache-folder .yarn
+    - find app/build/outputs/apk/ -type f
   only:
     - master
   artifacts:
