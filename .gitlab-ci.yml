@@ -22,14 +22,14 @@ build:
     - cd frontend
     - yarn install --frozen-lockfile 
   script:
-    - cd android && ./gradlew clean && ./gradlew assembleRelease
+    - cd android && ./gradlew assembleRelease
     - yarn install --pure-lockfile --cache-folder .yarn
     - find app/build/outputs/apk/ -type f
   only:
     - master
   artifacts:
     paths:
-      - android/app/build/outputs/apk/release/app-release.apk
+      - app/build/outputs/apk/release/app-release.apk
 
 deploy:
   image: alpine:latest
