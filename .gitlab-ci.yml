@@ -42,9 +42,9 @@ deploy:
     - git clone https://github.com/${GIT_USER_NAME}/${GIT_REPO}.git
     - cd ${GIT_REPO}
     - mkdir -p docs/apk
-    - cp ../index.html .
+    - cp ../index.html ./docs
     - echo "../${APK_OUTPUT_PATH}"
     - cp ../${APK_OUTPUT_PATH} docs/apk/app-release.apk
-    - git add index.html docs/apk/app-release.apk
+    - git add .
     - git commit -m "Update APK link"
     - git push https://$GIT_TOKEN@github.com/${GIT_USER_NAME}/${GIT_REPO}.git HEAD:main
