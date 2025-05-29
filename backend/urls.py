@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import backend.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/my-endpoint/', views.my_api_endpoint, name='my_endpoint'), # Add this line
+    path('alive', views.alive, name='alive')
 ]
+
+#  database: Render 
