@@ -19,16 +19,17 @@ build:
       - node_modules
     policy: pull 
   before_script:
-  - yarn install --frozen-lockfile 
+    - cd frontend
+    - yarn install --frozen-lockfile 
   script:
-    - cd frontend/android && ./gradlew clean && ./gradlew assembleRelease
+    - cd android && ./gradlew clean && ./gradlew assembleRelease
     - yarn install --pure-lockfile --cache-folder .yarn
     - find app/build/outputs/apk/ -type f
   only:
     - master
   artifacts:
     paths:
-      - frontend/android/app/build/outputs/apk/release/app-release.apk
+      - android/app/build/outputs/apk/release/app-release.apk
 
 deploy:
   image: alpine:latest
